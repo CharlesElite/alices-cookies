@@ -74,44 +74,72 @@
     <!-- Story Section -->
     <section id="story" class="story">
         <div class="container">
-            <div class="story-grid">
-                <div class="story-image">
-                    <img src="images/profile.jpg" alt="Alice - Girl Scout" class="profile-img">
+            <h2 class="section-title center">Meet Alice</h2>
+            <p class="section-subtitle">Get to know me and my Girl Scout journey!</p>
+
+            <!-- Video and Image Grid -->
+            <div class="story-media-grid">
+                <div class="story-video">
+                    <div class="video-wrapper">
+                        <video
+                            id="meetMeVideo"
+                            class="meet-me-video"
+                            controls
+                            poster="images/video-thumbnail.jpg"
+                            preload="metadata">
+                            <source src="videos/meet-alice.mp4" type="video/mp4">
+                            <source src="videos/meet-alice.webm" type="video/webm">
+                            Your browser doesn't support video playback.
+                        </video>
+                        <div class="video-placeholder">
+                            <div class="video-icon">🎥</div>
+                            <p>Add your "Meet Me" video here!</p>
+                            <small>Drop a video file at: <code>videos/meet-alice.mp4</code></small>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="story-content">
-                    <h2 class="section-title">My Story</h2>
-                    <div class="story-text">
-                        <p>Hi! I'm Alice, and I've been a Girl Scout for [X] years. This year, I'm on a mission to sell 5,000 boxes of cookies to help fund our troop's summer camp adventure!</p>
+                <div class="story-image">
+                    <img src="images/profile.jpg" alt="Alice - Girl Scout" class="profile-img">
+                    <div class="image-badge">
+                        <span class="badge-icon">🍪</span>
+                        <span class="badge-text">Cookie Boss</span>
+                    </div>
+                </div>
+            </div>
 
-                        <p>Being a Girl Scout has taught me so much about leadership, community service, and entrepreneurship. Every box you buy doesn't just get you delicious cookies—it helps me develop skills that will last a lifetime.</p>
+            <!-- Story Content -->
+            <div class="story-content">
+                <div class="story-text">
+                    <p>Hi! I'm Alice, and I've been a Girl Scout for [X] years. This year, I'm on a mission to sell 5,000 boxes of cookies to help fund our troop's summer camp adventure!</p>
 
-                        <p>This year, our goal is to go to [Camp Name/Location], where we'll learn outdoor skills, make new friends, and create amazing memories. Your support means the world to me!</p>
+                    <p>Being a Girl Scout has taught me so much about leadership, community service, and entrepreneurship. Every box you buy doesn't just get you delicious cookies—it helps me develop skills that will last a lifetime.</p>
+
+                    <p>This year, our goal is to go to [Camp Name/Location], where we'll learn outdoor skills, make new friends, and create amazing memories. Your support means the world to me!</p>
+                </div>
+
+                <div class="story-highlights">
+                    <div class="highlight">
+                        <span class="highlight-icon">🎯</span>
+                        <div>
+                            <div class="highlight-label">My Goal</div>
+                            <div class="highlight-value">5,000 boxes</div>
+                        </div>
                     </div>
 
-                    <div class="story-highlights">
-                        <div class="highlight">
-                            <span class="highlight-icon">🎯</span>
-                            <div>
-                                <div class="highlight-label">My Goal</div>
-                                <div class="highlight-value">5,000 boxes</div>
-                            </div>
+                    <div class="highlight">
+                        <span class="highlight-icon">💚</span>
+                        <div>
+                            <div class="highlight-label">What it Supports</div>
+                            <div class="highlight-value">Summer Camp</div>
                         </div>
+                    </div>
 
-                        <div class="highlight">
-                            <span class="highlight-icon">💚</span>
-                            <div>
-                                <div class="highlight-label">What it Supports</div>
-                                <div class="highlight-value">Summer Camp</div>
-                            </div>
-                        </div>
-
-                        <div class="highlight">
-                            <span class="highlight-icon">⭐</span>
-                            <div>
-                                <div class="highlight-label">Years in Girl Scouts</div>
-                                <div class="highlight-value">[X] years</div>
-                            </div>
+                    <div class="highlight">
+                        <span class="highlight-icon">⭐</span>
+                        <div>
+                            <div class="highlight-label">Years in Girl Scouts</div>
+                            <div class="highlight-value">[X] years</div>
                         </div>
                     </div>
                 </div>

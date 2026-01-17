@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initFAQ();
     initProgressBar();
     initShareButton();
+    initMeetMeVideo();
     updateProgressFromAPI();
 });
 
@@ -147,6 +148,36 @@ function animateProgressBar() {
     setTimeout(() => {
         progressFill.style.width = targetWidth + '%';
     }, 500);
+}
+
+// =================================
+// Meet Me Video Handler
+// =================================
+function initMeetMeVideo() {
+    const video = document.getElementById('meetMeVideo');
+    const placeholder = document.querySelector('.video-placeholder');
+
+    if (!video || !placeholder) return;
+
+    // Check if video source can be loaded
+    video.addEventListener('error', () => {
+        // Video failed to load - show placeholder
+        video.style.display = 'none';
+        placeholder.style.display = 'flex';
+    });
+
+    video.addEventListener('loadedmetadata', () => {
+        // Video loaded successfully - hide placeholder
+        placeholder.style.display = 'none';
+        video.style.display = 'block';
+    });
+
+    // Check initial state
+    if (video.readyState >= 1) {
+        // Video already loaded
+        placeholder.style.display = 'none';
+        video.style.display = 'block';
+    }
 }
 
 // =================================

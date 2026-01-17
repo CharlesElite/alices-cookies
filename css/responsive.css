@@ -53,9 +53,18 @@
     }
 
     /* Story */
-    .story-grid {
+    .story-media-grid {
         grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
+        gap: var(--spacing-md);
+    }
+
+    .profile-img {
+        max-width: 300px;
+    }
+
+    .image-badge {
+        font-size: 13px;
+        padding: 6px 16px;
     }
 
     .section-title {
