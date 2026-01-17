@@ -2,18 +2,31 @@
    CSS Variables
    ================================= */
 :root {
-    /* Colors */
-    --primary-color: #00594c;
-    --primary-dark: #003d33;
-    --accent-color: #FDB813;
-    --accent-hover: #e6a50d;
-    --text-color: #333333;
-    --text-light: #666666;
+    /* Pastel Gradient Palette */
+    --color-mint: #97f6bb;
+    --color-seafoam: #9ee7ce;
+    --color-sky: #98d6db;
+    --color-blue: #99c6ea;
+    --color-periwinkle: #9dbbfd;
+
+    /* Primary Colors */
+    --primary-color: #97f6bb;
+    --primary-dark: #7dd9a0;
+    --accent-color: #9dbbfd;
+    --accent-hover: #7da5f5;
+    --text-color: #2d3748;
+    --text-light: #718096;
     --background: #ffffff;
-    --background-light: #f8f9fa;
-    --border-color: #e0e0e0;
-    --success-color: #4caf50;
-    --error-color: #f44336;
+    --background-light: #f7fafc;
+    --border-color: #e2e8f0;
+    --success-color: #97f6bb;
+    --error-color: #fc8181;
+
+    /* Gradient Combinations */
+    --gradient-primary: linear-gradient(135deg, var(--color-mint) 0%, var(--color-seafoam) 50%, var(--color-sky) 100%);
+    --gradient-accent: linear-gradient(135deg, var(--color-sky) 0%, var(--color-blue) 50%, var(--color-periwinkle) 100%);
+    --gradient-full: linear-gradient(135deg, var(--color-mint) 0%, var(--color-seafoam) 25%, var(--color-sky) 50%, var(--color-blue) 75%, var(--color-periwinkle) 100%);
+    --gradient-subtle: linear-gradient(180deg, rgba(151, 246, 187, 0.1) 0%, rgba(157, 187, 253, 0.1) 100%);
 
     /* Spacing */
     --spacing-xs: 8px;
@@ -26,13 +39,20 @@
     --font-heading: 'Poppins', sans-serif;
     --font-body: 'Inter', sans-serif;
 
-    /* Shadows */
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
-    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+    /* Shadows - softer for playful feel */
+    --shadow-sm: 0 2px 8px rgba(151, 246, 187, 0.15);
+    --shadow-md: 0 4px 12px rgba(152, 214, 219, 0.2);
+    --shadow-lg: 0 8px 20px rgba(157, 187, 253, 0.25);
+
+    /* Border Radius - more rounded for fun & playful */
+    --radius-sm: 12px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
 
     /* Transitions */
-    --transition: all 0.3s ease;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 /* =================================
@@ -88,27 +108,29 @@ h1, h2, h3, h4, h5, h6 {
 /* Buttons */
 .btn {
     display: inline-block;
-    padding: 14px 32px;
+    padding: 16px 36px;
     font-size: 16px;
     font-weight: 600;
     text-decoration: none;
-    border-radius: 8px;
-    transition: var(--transition);
+    border-radius: var(--radius-lg);
+    transition: var(--transition-bounce);
     cursor: pointer;
     border: none;
     font-family: var(--font-heading);
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 .btn-primary {
-    background: var(--accent-color);
-    color: var(--text-color);
+    background: var(--gradient-accent);
+    color: white;
+    box-shadow: var(--shadow-md);
 }
 
 .btn-primary:hover {
-    background: var(--accent-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 16px rgba(253, 184, 19, 0.4);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: var(--shadow-lg);
 }
 
 .btn-secondary {
@@ -177,14 +199,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-cta {
-    background: var(--accent-color);
+    background: var(--gradient-accent);
     padding: 10px 24px;
-    border-radius: 6px;
-    color: var(--text-color) !important;
+    border-radius: var(--radius-md);
+    color: white !important;
 }
 
 .nav-cta:hover {
-    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
 .nav-toggle {
@@ -222,7 +245,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, var(--primary-color) 0%, #00d563 100%);
+    background: var(--gradient-full);
 }
 
 .hero-background video {
@@ -237,7 +260,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 89, 76, 0.7);
+    background: rgba(151, 246, 187, 0.2);
 }
 
 .hero-content {
@@ -252,21 +275,24 @@ h1, h2, h3, h4, h5, h6 {
 .hero-title {
     font-size: 64px;
     margin-bottom: var(--spacing-sm);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+    letter-spacing: -1px;
 }
 
 .hero-subtitle {
     font-size: 28px;
     margin-bottom: var(--spacing-lg);
     opacity: 0.95;
+    font-weight: 500;
 }
 
 .progress-container {
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(15px);
     padding: var(--spacing-md);
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     margin-bottom: var(--spacing-lg);
+    border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .progress-text {
@@ -279,17 +305,18 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: 40px;
     background: rgba(255, 255, 255, 0.25);
-    border-radius: 20px;
+    border-radius: var(--radius-lg);
     overflow: hidden;
     margin: var(--spacing-sm) 0;
 }
 
 .progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, #00b359, #00d563);
-    border-radius: 20px;
-    transition: width 2s ease-out;
+    background: linear-gradient(90deg, var(--color-periwinkle), var(--color-blue), var(--color-sky));
+    border-radius: var(--radius-lg);
+    transition: width 2s cubic-bezier(0.4, 0, 0.2, 1);
     width: 0;
+    box-shadow: 0 0 20px rgba(157, 187, 253, 0.5);
 }
 
 .progress-percentage {
@@ -331,7 +358,7 @@ h1, h2, h3, h4, h5, h6 {
    ================================= */
 .story {
     padding: var(--spacing-xl) 0;
-    background: var(--background);
+    background: var(--gradient-subtle);
 }
 
 .story-grid {
@@ -348,8 +375,9 @@ h1, h2, h3, h4, h5, h6 {
 .profile-img {
     width: 100%;
     height: auto;
-    border-radius: 16px;
+    border-radius: var(--radius-xl);
     box-shadow: var(--shadow-lg);
+    border: 4px solid white;
 }
 
 .story-content {
@@ -437,17 +465,22 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    border-radius: 12px;
+    border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow-md);
+    transition: var(--transition);
 }
 
 .cookie-card-front {
     background: white;
 }
 
+.cookie-card:hover .cookie-card-front {
+    box-shadow: var(--shadow-lg);
+}
+
 .cookie-card-back {
-    background: var(--primary-color);
+    background: var(--gradient-accent);
     color: white;
     transform: rotateY(180deg);
     padding: var(--spacing-lg);
@@ -487,13 +520,14 @@ h1, h2, h3, h4, h5, h6 {
 
 .cookie-badge {
     display: inline-block;
-    background: var(--accent-color);
-    color: var(--text-color);
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 14px;
+    background: var(--gradient-primary);
+    color: white;
+    padding: 6px 14px;
+    border-radius: var(--radius-md);
+    font-size: 13px;
     font-weight: 600;
     margin-top: var(--spacing-sm);
+    box-shadow: var(--shadow-sm);
 }
 
 /* =================================
@@ -513,8 +547,9 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
     background: white;
     padding: var(--spacing-lg);
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     box-shadow: var(--shadow-md);
+    border: 3px solid var(--color-mint);
 }
 
 .form-section {
@@ -601,14 +636,15 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 16px;
     font-family: var(--font-body);
     border: 2px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
     transition: var(--transition);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--primary-color);
+    border-color: var(--color-blue);
+    box-shadow: 0 0 0 3px rgba(153, 198, 234, 0.1);
 }
 
 .address-fields {
@@ -617,9 +653,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Cookie Selector */
 .cookie-selector {
-    background: var(--background-light);
+    background: var(--gradient-subtle);
     padding: var(--spacing-md);
-    border-radius: 12px;
+    border-radius: var(--radius-lg);
+    border: 2px solid var(--color-mint);
 }
 
 .selector-row {
@@ -630,7 +667,13 @@ h1, h2, h3, h4, h5, h6 {
     padding: var(--spacing-sm);
     margin-bottom: var(--spacing-sm);
     background: white;
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+.selector-row:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow-sm);
 }
 
 .selector-row:last-child {
@@ -650,19 +693,25 @@ h1, h2, h3, h4, h5, h6 {
 .qty-btn {
     width: 36px;
     height: 36px;
-    border: 2px solid var(--primary-color);
+    border: 2px solid var(--color-blue);
     background: white;
-    color: var(--primary-color);
+    color: var(--color-blue);
     font-size: 20px;
     font-weight: 700;
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     cursor: pointer;
-    transition: var(--transition);
+    transition: var(--transition-bounce);
 }
 
 .qty-btn:hover {
-    background: var(--primary-color);
+    background: var(--gradient-accent);
     color: white;
+    border-color: transparent;
+    transform: scale(1.1);
+}
+
+.qty-btn:active {
+    transform: scale(0.95);
 }
 
 .qty-input {
@@ -721,8 +770,9 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     padding: var(--spacing-xl);
     background: white;
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
+    border: 3px solid var(--color-mint);
 }
 
 .success-icon {
@@ -768,10 +818,16 @@ h1, h2, h3, h4, h5, h6 {
 
 .faq-item {
     background: white;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     margin-bottom: var(--spacing-sm);
     box-shadow: var(--shadow-sm);
     overflow: hidden;
+    border: 2px solid transparent;
+    transition: var(--transition);
+}
+
+.faq-item:hover {
+    border-color: var(--color-mint);
 }
 
 .faq-question {
@@ -791,13 +847,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .faq-question:hover {
-    background: var(--background-light);
+    background: var(--gradient-subtle);
 }
 
 .faq-icon {
     font-size: 24px;
-    color: var(--primary-color);
-    transition: var(--transition);
+    color: var(--color-blue);
+    transition: var(--transition-bounce);
 }
 
 .faq-item.active .faq-icon {
@@ -825,7 +881,7 @@ h1, h2, h3, h4, h5, h6 {
    ================================= */
 .footer {
     padding: var(--spacing-xl) 0 var(--spacing-md);
-    background: var(--primary-color);
+    background: var(--gradient-full);
     color: white;
 }
 
