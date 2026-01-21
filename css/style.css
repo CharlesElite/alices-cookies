@@ -254,10 +254,6 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     height: 100%;
     background: var(--gradient-full);
-    background-image: url('../images/hero-background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 .hero-background video {
@@ -272,7 +268,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(0, 177, 64, 0.75), rgba(157, 77, 221, 0.75));
+    background: linear-gradient(135deg, rgba(0, 177, 64, 0.2), rgba(157, 77, 221, 0.2));
 }
 
 .hero-content {
@@ -288,9 +284,8 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 64px;
     margin-bottom: var(--spacing-sm);
     text-shadow:
-        3px 3px 12px rgba(0, 0, 0, 0.8),
-        0 0 20px rgba(0, 0, 0, 0.6),
-        0 0 40px rgba(0, 0, 0, 0.4);
+        2px 2px 8px rgba(0, 0, 0, 0.4),
+        0 0 20px rgba(0, 0, 0, 0.2);
     letter-spacing: -1px;
     font-weight: 800;
 }
@@ -301,8 +296,8 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 1;
     font-weight: 700;
     text-shadow:
-        2px 2px 8px rgba(0, 0, 0, 0.8),
-        0 0 15px rgba(0, 0, 0, 0.5);
+        2px 2px 6px rgba(0, 0, 0, 0.3),
+        0 0 15px rgba(0, 0, 0, 0.2);
 }
 
 .hero-delivery {
@@ -310,30 +305,30 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: var(--spacing-lg);
     opacity: 1;
     font-weight: 600;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     padding: 12px 24px;
     border-radius: var(--radius-md);
     display: inline-block;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
 }
 
 .progress-container {
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(20px);
     padding: var(--spacing-md);
     border-radius: var(--radius-lg);
     margin-bottom: var(--spacing-lg);
-    border: 3px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    border: 3px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px rgba(157, 77, 221, 0.3);
 }
 
 .progress-text {
     font-size: 20px;
     font-weight: 700;
     margin-bottom: var(--spacing-sm);
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .progress-bar {
@@ -358,7 +353,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 24px;
     font-weight: 800;
     margin-top: var(--spacing-sm);
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .cta-buttons {
