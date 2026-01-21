@@ -11,13 +11,13 @@ const CONFIG = {
     ZAPIER_WEBHOOK_URL: '', // Add your Zapier webhook URL here
     cookies: [
         'thin-mints',
-        'samoas',
-        'tagalongs',
+        'caramel-delites',
+        'peanut-butter-patties',
         'trefoils',
         'lemonades',
-        'dosidos',
+        'peanut-butter-sandwich',
         'adventurefuls',
-        'toastyay'
+        'exploremores'
     ]
 };
 
@@ -96,26 +96,8 @@ function updateTotal() {
 // Delivery Method Toggle
 // =================================
 function initDeliveryMethodToggle() {
-    const deliveryRadios = document.querySelectorAll('input[name="delivery"]');
-    const addressFields = document.getElementById('addressFields');
-
-    deliveryRadios.forEach(radio => {
-        radio.addEventListener('change', () => {
-            if (radio.value === 'Donate') {
-                addressFields.style.display = 'none';
-                // Remove required from address fields
-                addressFields.querySelectorAll('input').forEach(input => {
-                    input.removeAttribute('required');
-                });
-            } else {
-                addressFields.style.display = 'block';
-                // Add required back to address fields
-                addressFields.querySelectorAll('input').forEach(input => {
-                    input.setAttribute('required', 'required');
-                });
-            }
-        });
-    });
+    // No longer needed - local delivery only, address always required
+    // Keeping function for backwards compatibility
 }
 
 // =================================
@@ -342,18 +324,15 @@ function collectFormData() {
     const totalBoxes = Object.values(quantities).reduce((sum, qty) => sum + qty, 0);
     const totalAmount = totalBoxes * CONFIG.COOKIE_PRICE;
 
-    // Get form values
-    const deliveryMethod = form.querySelector('input[name="delivery"]:checked').value;
-
     return {
         timestamp: new Date().toISOString(),
         customer_name: document.getElementById('name').value.trim(),
         customer_email: document.getElementById('email').value.trim(),
         customer_phone: document.getElementById('phone').value.trim(),
-        delivery_method: deliveryMethod,
-        address: deliveryMethod !== 'Donate' ? document.getElementById('address')?.value.trim() : '',
-        city: deliveryMethod !== 'Donate' ? document.getElementById('city')?.value.trim() : '',
-        zip: deliveryMethod !== 'Donate' ? document.getElementById('zip')?.value.trim() : '',
+        delivery_method: 'Local Delivery - Twin Cities',
+        address: document.getElementById('address').value.trim(),
+        city: document.getElementById('city').value.trim(),
+        zip: document.getElementById('zip').value.trim(),
         cookies: cookies,
         total_boxes: totalBoxes,
         total_amount: totalAmount,
@@ -364,14 +343,14 @@ function collectFormData() {
 
 function getCookieDisplayName(cookieId) {
     const names = {
-        'thin-mints': 'Thin Mints',
-        'samoas': 'Caramel deLites',
-        'tagalongs': 'Peanut Butter Patties',
-        'trefoils': 'Shortbread',
-        'lemonades': 'Lemonades',
-        'dosidos': 'Do-si-dos',
-        'adventurefuls': 'Adventurefuls',
-        'toastyay': 'Toast-Yay!'
+        'thin-mints': 'Thin Mints®',
+        'caramel-delites': 'Caramel deLites®',
+        'peanut-butter-patties': 'Peanut Butter Patties®',
+        'trefoils': 'Trefoils®',
+        'lemonades': 'Lemonades®',
+        'peanut-butter-sandwich': 'Peanut Butter Sandwich',
+        'adventurefuls': 'Adventurefuls™',
+        'exploremores': 'Exploremores™'
     };
     return names[cookieId] || cookieId;
 }
