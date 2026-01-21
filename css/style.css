@@ -255,7 +255,7 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     background: var(--gradient-full);
     background-image: url('../images/hero-background.jpg');
-    background-size: cover;
+    background-size: 800px;
     background-position: center;
     background-repeat: repeat;
 }
@@ -272,7 +272,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 177, 64, 0.15);
+    background: linear-gradient(135deg, rgba(0, 177, 64, 0.75), rgba(157, 77, 221, 0.75));
 }
 
 .hero-content {
@@ -287,42 +287,53 @@ h1, h2, h3, h4, h5, h6 {
 .hero-title {
     font-size: 64px;
     margin-bottom: var(--spacing-sm);
-    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+    text-shadow:
+        3px 3px 12px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(0, 0, 0, 0.6),
+        0 0 40px rgba(0, 0, 0, 0.4);
     letter-spacing: -1px;
+    font-weight: 800;
 }
 
 .hero-subtitle {
     font-size: 28px;
     margin-bottom: var(--spacing-sm);
-    opacity: 0.95;
-    font-weight: 600;
+    opacity: 1;
+    font-weight: 700;
+    text-shadow:
+        2px 2px 8px rgba(0, 0, 0, 0.8),
+        0 0 15px rgba(0, 0, 0, 0.5);
 }
 
 .hero-delivery {
     font-size: 18px;
     margin-bottom: var(--spacing-lg);
-    opacity: 0.9;
-    font-weight: 500;
-    background: rgba(255, 255, 255, 0.2);
-    padding: 8px 20px;
+    opacity: 1;
+    font-weight: 600;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    padding: 12px 24px;
     border-radius: var(--radius-md);
     display: inline-block;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
 }
 
 .progress-container {
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(15px);
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(20px);
     padding: var(--spacing-md);
     border-radius: var(--radius-lg);
     margin-bottom: var(--spacing-lg);
-    border: 3px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 8px 32px rgba(157, 77, 221, 0.3);
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
 .progress-text {
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: var(--spacing-sm);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
 }
 
 .progress-bar {
@@ -345,8 +356,9 @@ h1, h2, h3, h4, h5, h6 {
 
 .progress-percentage {
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 800;
     margin-top: var(--spacing-sm);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
 }
 
 .cta-buttons {
