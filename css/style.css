@@ -255,9 +255,9 @@ h1, h2, h3, h4, h5, h6 {
     height: 100%;
     background: var(--gradient-full);
     background-image: url('../images/hero-background.jpg');
-    background-size: 800px;
+    background-size: cover;
     background-position: center;
-    background-repeat: repeat;
+    background-repeat: no-repeat;
 }
 
 .hero-background video {
