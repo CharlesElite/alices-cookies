@@ -31,7 +31,7 @@
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#story">My Story</a></li>
                 <li><a href="#cookies">Cookies</a></li>
-                <li><a href="#order" class="nav-cta">Order Now</a></li>
+                <li><a href="#order" class="nav-cta">Pre-Order Now</a></li>
             </ul>
             <button class="nav-toggle" aria-label="Toggle navigation">
                 <span></span>
@@ -50,22 +50,23 @@
 
         <div class="hero-content">
             <h1 class="hero-title fade-in">Hi! I'm Alice! 🍪</h1>
-            <p class="hero-subtitle fade-in delay-1">Help me reach my summer camp dream</p>
+            <p class="hero-subtitle fade-in delay-1">Pre-Order Girl Scout Cookies Now!</p>
+            <p class="hero-delivery fade-in delay-1">Delivery Week of February 20th • Pay on Delivery</p>
 
             <div class="progress-container fade-in delay-2">
                 <div class="progress-text">
-                    <span id="boxes-sold">0</span> / <span id="boxes-goal">5000</span> boxes
+                    <span id="boxes-sold">28</span> / <span id="boxes-goal">2000</span> boxes
                 </div>
                 <div class="progress-bar">
-                    <div class="progress-fill" id="progress-fill" data-progress="0"></div>
+                    <div class="progress-fill" id="progress-fill" data-progress="1.4"></div>
                 </div>
                 <div class="progress-percentage">
-                    <span id="percentage">0</span>% complete
+                    <span id="percentage">1.4</span>% complete
                 </div>
             </div>
 
             <div class="cta-buttons fade-in delay-3">
-                <a href="#order" class="btn btn-primary">Order Cookies Now</a>
+                <a href="#order" class="btn btn-primary">Pre-Order Cookies Now</a>
                 <a href="#story" class="btn btn-secondary">Meet Me</a>
             </div>
         </div>
@@ -111,9 +112,9 @@
             <!-- Story Content -->
             <div class="story-content">
                 <div class="story-text">
-                    <p>Hi! I'm Alice, and I've been a Girl Scout for [X] years. This year, I'm on a mission to sell 5,000 boxes of cookies to help fund our troop's summer camp adventure!</p>
+                    <p>Hi! I'm Alice, and I've been a Girl Scout for [X] years. This year, I'm on a mission to sell 2,000 boxes of cookies to help fund our troop's summer camp adventure!</p>
 
-                    <p>Being a Girl Scout has taught me so much about leadership, community service, and entrepreneurship. Every box you buy doesn't just get you delicious cookies—it helps me develop skills that will last a lifetime.</p>
+                    <p><strong>Pre-orders are now open!</strong> Delivery is scheduled for the week of February 20th, and payment is due when you receive your cookies. Being a Girl Scout has taught me so much about leadership, community service, and entrepreneurship. Every box you pre-order doesn't just get you delicious cookies—it helps me develop skills that will last a lifetime.</p>
 
                     <p>This year, our goal is to go to [Camp Name/Location], where we'll learn outdoor skills, make new friends, and create amazing memories. Your support means the world to me!</p>
                 </div>
@@ -123,7 +124,7 @@
                         <span class="highlight-icon">🎯</span>
                         <div>
                             <div class="highlight-label">My Goal</div>
-                            <div class="highlight-value">5,000 boxes</div>
+                            <div class="highlight-value">2,000 boxes</div>
                         </div>
                     </div>
 
@@ -298,8 +299,12 @@
     <section id="order" class="order">
         <div class="container">
             <div class="order-header">
-                <h2 class="section-title center">Ready to Order? 🍪</h2>
-                <p class="section-subtitle">Fill out the form below and I'll get your cookies to you!</p>
+                <h2 class="section-title center">Ready to Pre-Order? 🍪</h2>
+                <p class="section-subtitle">Fill out the form below to reserve your cookies!</p>
+                <div class="pre-order-notice">
+                    <strong>📅 Delivery Week:</strong> February 20th, 2026<br>
+                    <strong>💰 Payment:</strong> Due upon delivery (Venmo, Zelle, Cash, or Check accepted)
+                </div>
             </div>
 
             <form id="orderForm" class="order-form">
@@ -488,7 +493,7 @@
                 <!-- Submit Button -->
                 <div class="form-submit">
                     <button type="submit" class="btn btn-primary btn-large" id="submitBtn">
-                        Place My Order
+                        Place My Pre-Order
                     </button>
                 </div>
             </form>
@@ -496,11 +501,13 @@
             <!-- Success Message (hidden by default) -->
             <div id="successMessage" class="success-message" style="display: none;">
                 <div class="success-icon">🎉</div>
-                <h3>Order Received!</h3>
+                <h3>Pre-Order Received!</h3>
                 <p class="success-text">Thank you <span id="successName"></span>!</p>
-                <p>You ordered <span id="successBoxes"></span> boxes (<span id="successAmount"></span>)</p>
+                <p>You pre-ordered <span id="successBoxes"></span> boxes (<span id="successAmount"></span>)</p>
+                <p><strong>Delivery:</strong> Week of February 20th</p>
+                <p><strong>Payment:</strong> Due on delivery</p>
                 <p>Check your email and text for confirmation!</p>
-                <button type="button" class="btn btn-secondary" onclick="location.reload()">Place Another Order</button>
+                <button type="button" class="btn btn-secondary" onclick="location.reload()">Place Another Pre-Order</button>
             </div>
         </div>
     </section>
@@ -513,11 +520,21 @@
             <div class="faq-list">
                 <div class="faq-item">
                     <button class="faq-question">
+                        <span>What does pre-ordering mean?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Pre-ordering means you're reserving your cookies now! You don't pay anything today. I'll deliver your cookies the week of February 20th, and payment is due when you receive them. This helps me know how many boxes to order!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
                         <span>When will I receive my cookies?</span>
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Cookies will be delivered within 1-2 weeks of ordering. I'll text you when they're ready for delivery!</p>
+                        <p><strong>All pre-orders will be delivered the week of February 20th, 2026.</strong> I'll text and email you a few days before to confirm your delivery details!</p>
                     </div>
                 </div>
 
@@ -537,7 +554,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>Payment is due upon delivery. I accept Venmo, Zelle, cash, or check. I'll send payment details in your confirmation.</p>
+                        <p><strong>No payment needed now!</strong> Payment is due when you receive your cookies during the week of February 20th. I accept Venmo, Zelle, cash, or check. I'll send payment details in your confirmation email.</p>
                     </div>
                 </div>
 
@@ -584,7 +601,7 @@
                     <p class="footer-text">Every box you buy helps me grow as a leader and makes amazing experiences possible.</p>
 
                     <div class="footer-cta">
-                        <a href="#order" class="btn btn-primary">Order Cookies</a>
+                        <a href="#order" class="btn btn-primary">Pre-Order Cookies</a>
                         <button class="btn btn-secondary" id="shareBtn">Share This Site</button>
                     </div>
                 </div>
