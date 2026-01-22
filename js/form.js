@@ -8,7 +8,6 @@
 // =================================
 const CONFIG = {
     COOKIE_PRICE: 6,
-    ZAPIER_WEBHOOK_URL: '', // Add your Zapier webhook URL here
     cookies: [
         'thin-mints',
         'caramel-delites',
@@ -286,12 +285,25 @@ function initFormSubmission() {
         // Prepare order data
         const orderData = collectFormData();
 
+        // Create order summary for Netlify
+        const orderSummary = formatOrderSummary(orderData);
+        document.getElementById('order-summary').value = orderSummary;
+
         // Show loading state
         showLoading();
 
         try {
-            // Submit to Zapier
-            await submitOrder(orderData);
+            // Submit to Netlify Forms
+            const formData = new FormData(form);
+            const response = await fetch('/', {
+                method: 'POST',
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
+            });
+
+            if (!response.ok) {
+                throw new Error('Form submission failed');
+            }
 
             // Show success message
             showSuccess(orderData);
@@ -355,29 +367,32 @@ function getCookieDisplayName(cookieId) {
     return names[cookieId] || cookieId;
 }
 
-async function submitOrder(orderData) {
-    // If no webhook URL is configured, just log to console
-    if (!CONFIG.ZAPIER_WEBHOOK_URL) {
-        console.log('Order data:', orderData);
-        console.log('⚠️ No Zapier webhook configured. Add your webhook URL to form.js');
-        // Simulate successful submission for testing
-        return new Promise(resolve => setTimeout(resolve, 1000));
-    }
+function formatOrderSummary(orderData) {
+    let summary = `ORDER DETAILS\n`;
+    summary += `=============\n\n`;
+    summary += `Customer: ${orderData.customer_name}\n`;
+    summary += `Email: ${orderData.customer_email}\n`;
+    summary += `Phone: ${orderData.customer_phone}\n\n`;
+    summary += `Delivery Address:\n`;
+    summary += `${orderData.address}\n`;
+    summary += `${orderData.city}, ${orderData.zip}\n\n`;
+    summary += `COOKIES ORDERED:\n`;
+    summary += `----------------\n`;
 
-    // Submit to Zapier webhook
-    const response = await fetch(CONFIG.ZAPIER_WEBHOOK_URL, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(orderData)
+    orderData.cookies.forEach(cookie => {
+        summary += `${cookie.quantity}x ${cookie.name} - $${cookie.price}\n`;
     });
 
-    if (!response.ok) {
-        throw new Error('Failed to submit order');
+    summary += `\n`;
+    summary += `TOTAL: ${orderData.total_boxes} boxes - $${orderData.total_amount}\n`;
+
+    if (orderData.special_requests) {
+        summary += `\nSpecial Requests: ${orderData.special_requests}\n`;
     }
 
-    return response;
+    summary += `\nOrder Date: ${new Date(orderData.timestamp).toLocaleString()}\n`;
+
+    return summary;
 }
 
 // =================================
@@ -394,7 +409,7 @@ function showLoading() {
 function hideLoading() {
     const submitBtn = document.getElementById('submitBtn');
     submitBtn.disabled = false;
-    submitBtn.textContent = 'Place My Order';
+    submitBtn.textContent = 'Place My Pre-Order';
     submitBtn.style.opacity = '1';
     submitBtn.style.cursor = 'pointer';
 }

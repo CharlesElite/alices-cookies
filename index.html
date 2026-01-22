@@ -312,7 +312,14 @@
                 </div>
             </div>
 
-            <form id="orderForm" class="order-form">
+            <form id="orderForm" class="order-form" name="cookie-orders" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <!-- Hidden fields for Netlify -->
+                <input type="hidden" name="form-name" value="cookie-orders">
+                <p style="display:none;">
+                    <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                </p>
+                <input type="hidden" name="order-summary" id="order-summary">
+
                 <!-- Delivery Method -->
                 <div class="form-section">
                     <h3 class="form-section-title">Delivery Method</h3>
