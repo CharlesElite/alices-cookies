@@ -274,12 +274,11 @@ function showFormError(message) {
 function initFormSubmission() {
     const form = document.getElementById('orderForm');
 
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        // Validate form
+    form.addEventListener('submit', (e) => {
+        // Validate form first
         if (!validateForm()) {
-            return;
+            e.preventDefault();
+            return false;
         }
 
         // Prepare order data
@@ -292,28 +291,9 @@ function initFormSubmission() {
         // Show loading state
         showLoading();
 
-        try {
-            // Submit to Netlify Forms
-            const formData = new FormData(form);
-            const response = await fetch('/', {
-                method: 'POST',
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams(formData).toString()
-            });
-
-            if (!response.ok) {
-                throw new Error('Form submission failed');
-            }
-
-            // Show success message
-            showSuccess(orderData);
-
-        } catch (error) {
-            console.error('Order submission error:', error);
-            showError();
-        } finally {
-            hideLoading();
-        }
+        // Let the form submit naturally to Netlify
+        // Netlify will handle the redirect to success.html
+        return true;
     });
 }
 

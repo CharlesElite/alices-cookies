@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Received! - Alice's Cookies</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .success-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-subtle);
+            padding: var(--spacing-lg);
+        }
+        .success-container {
+            max-width: 600px;
+            text-align: center;
+            background: white;
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            border: 3px solid var(--color-green);
+        }
+        .success-icon {
+            font-size: 80px;
+            margin-bottom: var(--spacing-md);
+            animation: bounce 1s ease infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .success-title {
+            font-size: 36px;
+            color: var(--color-green);
+            margin-bottom: var(--spacing-sm);
+        }
+        .success-message {
+            font-size: 18px;
+            color: var(--text-color);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-md);
+        }
+        .success-details {
+            background: var(--gradient-subtle);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            margin: var(--spacing-md) 0;
+        }
+        .success-details p {
+            margin: 8px 0;
+            font-size: 16px;
+        }
+        .success-details strong {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="success-page">
+        <div class="success-container">
+            <div class="success-icon">🎉</div>
+            <h1 class="success-title">Pre-Order Received!</h1>
+            <p class="success-message">Thank you for supporting Alice's Girl Scout journey!</p>
+
+            <div class="success-details">
+                <p><strong>📅 Delivery:</strong> Starting the week of Feb 20</p>
+                <p><strong>💰 Payment:</strong> Due on delivery</p>
+                <p><strong>📧 Confirmation:</strong> Check your email!</p>
+            </div>
+
+            <p class="success-message">
+                I'll text and email you a few days before delivery to confirm details.
+                Payment (Venmo, Zelle, Cash, or Check) is due when you receive your cookies.
+            </p>
+
+            <div style="margin-top: var(--spacing-lg);">
+                <a href="/" class="btn btn-primary">Back to Home</a>
+            </div>
+
+            <p style="margin-top: var(--spacing-md); font-size: 14px; color: var(--text-light);">
+                Questions? Email us at <a href="mailto:alicescookies@example.com" style="color: var(--primary-color);">alicescookies@example.com</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
