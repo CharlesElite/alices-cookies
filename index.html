@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Support Alice's Girl Scout journey! Order delicious Girl Scout cookies and help her reach her goals.">
+    <meta name="keywords" content="Girl Scout Cookies, Girl Scouts, cookies, fundraiser, Alice">
+
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="Alice's Girl Scout Cookies">
+    <meta property="og:description" content="Support Alice's Girl Scout journey! Order cookies today!">
+    <meta property="og:type" content="website">
+
+    <title>Alice's Girl Scout Cookies 🍪</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-brand">Alice's Cookies 🍪</div>
+            <ul class="nav-menu">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#story">My Story</a></li>
+                <li><a href="#cookies">Cookies</a></li>
+                <li><a href="#order" class="nav-cta">Pre-Order Now</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-background">
+            <!-- You'll add your video or image here -->
+            <div class="hero-overlay"></div>
+        </div>
+
+        <div class="hero-content">
+            <h1 class="hero-title fade-in">Hi! I'm Alice! 🍪</h1>
+            <p class="hero-subtitle fade-in delay-1">First Year Girl Scout • Pre-Orders Open!</p>
+            <p class="hero-delivery fade-in delay-1">Twin Cities Local Delivery • Starting the week of Feb 20</p>
+
+            <div class="progress-container fade-in delay-2">
+                <div class="progress-text">
+                    <span id="boxes-sold">28</span> / <span id="boxes-goal">2000</span> boxes
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill" data-progress="1.4"></div>
+                </div>
+                <div class="progress-percentage">
+                    <span id="percentage">1.4</span>% complete
+                </div>
+            </div>
+
+            <div class="cta-buttons fade-in delay-3">
+                <a href="#order" class="btn btn-primary">Pre-Order Cookies Now</a>
+                <a href="#story" class="btn btn-secondary">Meet Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section id="story" class="story">
+        <div class="container">
+            <h2 class="section-title center">Meet Alice</h2>
+            <p class="section-subtitle">Get to know me and my Girl Scout journey!</p>
+
+            <!-- Video and Image Grid -->
+            <div class="story-media-grid">
+                <div class="story-video">
+                    <div class="video-wrapper">
+                        <video
+                            id="meetMeVideo"
+                            class="meet-me-video"
+                            controls
+                            poster="images/video-thumbnail.jpg"
+                            preload="metadata">
+                            <source src="videos/meet-alice.mp4" type="video/mp4">
+                            <source src="videos/meet-alice.webm" type="video/webm">
+                            Your browser doesn't support video playback.
+                        </video>
+                        <div class="video-placeholder">
+                            <div class="video-icon">🎥</div>
+                            <p>Add your "Meet Me" video here!</p>
+                            <small>Drop a video file at: <code>videos/meet-alice.mp4</code></small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-image">
+                    <img src="images/profile.jpg" alt="Alice - Girl Scout" class="profile-img">
+                    <div class="image-badge">
+                        <span class="badge-icon">🍪</span>
+                        <span class="badge-text">Cookie Boss</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Story Content -->
+            <div class="story-content">
+                <div class="story-text">
+                    <p>Hi! I'm Alice, and this is my first year as a Girl Scout! I'm on a mission to sell 2,000 boxes of cookies to help fund a week at summer camp with my troop.</p>
+
+                    <p><strong>Pre-orders are now open!</strong> Delivery starting the week of Feb 20, and payment is due when you receive your cookies.</p>
+
+                    <p>We just moved to Lakeland and I am excited to join scouts to learn, grow and work in my community. Every box you pre-order doesn't just get you delicious cookies—it helps me develop skills that will last a lifetime.</p>
+
+                    <p>My goal this year is to earn enough to go to summer camp for a week, where I'll learn outdoor skills, make new friends, and create amazing memories. Your support means the world to me!</p>
+                </div>
+
+                <div class="story-highlights">
+                    <div class="highlight">
+                        <span class="highlight-icon">🎯</span>
+                        <div>
+                            <div class="highlight-label">My Goal</div>
+                            <div class="highlight-value">2,000 boxes</div>
+                        </div>
+                    </div>
+
+                    <div class="highlight">
+                        <span class="highlight-icon">💚</span>
+                        <div>
+                            <div class="highlight-label">What it Supports</div>
+                            <div class="highlight-value">Week at Camp</div>
+                        </div>
+                    </div>
+
+                    <div class="highlight">
+                        <span class="highlight-icon">⭐</span>
+                        <div>
+                            <div class="highlight-label">Girl Scout Status</div>
+                            <div class="highlight-value">First Year!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cookie Showcase -->
+    <section id="cookies" class="cookies">
+        <div class="container">
+            <h2 class="section-title center">Choose Your Favorites</h2>
+            <p class="section-subtitle">Tap or hover to see details</p>
+
+            <div class="cookie-grid">
+                <!-- Thin Mints -->
+                <div class="cookie-card" data-cookie="Thin Mints">
+                    <div class="cookie-card-inner">
+                        <div class="cookie-card-front">
+                            <img src="images/cookies/thin-mints.jpg" alt="Thin Mints" class="cookie-img">
+                            <div class="cookie-info">
+                                <h3 class="cookie-name">Thin Mints®</h3>
+                                <p class="cookie-price">$6</p>
+                            </div>
+                        </div>
+                        <div class="cookie-card-back">
+                            <h3>Thin Mints®</h3>
+                            <p class="cookie-description">Crispy chocolate wafers dipped in a mint chocolaty coating. Pro tip: Try them frozen!</p>
+                            <div class="cookie-badge">Fan Favorite</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Caramel deLites -->
+                <div class="cookie-card" data-cookie="Caramel deLites">
+                    <div class="cookie-card-inner">
+                        <div class="cookie-card-front">
+                            <img src="images/cookies/caramel-delites.jpg" alt="Caramel deLites" class="cookie-img">
+                            <div class="cookie-info">
+                                <h3 class="cookie-name">Caramel deLites®</h3>
+                                <p class="cookie-price">$6</p>
+                            </div>
+                        </div>
+                        <div class="cookie-card-back">
+                            <h3>Caramel deLites®</h3>
+                            <p class="cookie-description">Crispy cookies with caramel, coconut, and chocolaty stripes. A perfect blend of flavors in every bite!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Peanut Butter Patties -->
+                <div class="cookie-card" data-cookie="Peanut Butter Patties">
+                    <div class="cookie-card-inner">
+                        <div class="cookie-card-front">
+                            <img src="images/cookies/peanut-butter-patties.jpg" alt="Peanut Butter Patties" class="cookie-img">
+                            <div class="cookie-info">
+                                <h3 class="cookie-name">Peanut Butter Patties®</h3>
+                                <p class="cookie-price">$6</p>
+                            </div>
+                        </div>
+                        <div class="cookie-card-back">
+                            <h3>Peanut Butter Patties®</h3>
+                            <p class="cookie-description">Crispy cookies layered with peanut butter and covered with a chocolaty coating. The perfect PB & chocolate combo!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trefoils -->
+                <div class="cookie-card" data-cookie="Trefoils">
+                    <div class="cookie-card-inner">
+                        <div class="cookie-card-front">
+                            <img src="images/cookies/trefoils.jpg" alt="Trefoils" class="cookie-img">
+                            <div class="cookie-info">
+                                <h3 class="cookie-name">Trefoils®</h3>
+                                <p class="cookie-price">$6</p>
+                            </div>
+                        </div>
+                        <div class="cookie-card-back">
+                            <h3>Trefoils®</h3>
+                            <p class="cookie-description">Iconic shortbread cookies inspired by the original Girl Scout recipe. Classic, buttery, and delicious!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lemonades -->
+                <div class="cookie-card" data-cookie="Lemonades">
+                    <div class="cookie-card-inner">
+                        <div class="cookie-card-front">
+                            <img src="images/cookies/lemonades.jpg" alt="Lemonades" class="cookie-img">
+                            <div class="cookie-info">
+                                <h3 class="cookie-name">Lemonades®</h3>
+                                <p class="cookie-price">$6</p>
+                            </div>
+                        </div>
+                        <div class="cookie-card-back">
+                            <h3>Lemonades®</h3>
+                            <p class="cookie-description">Savory slices of shortbread with a refreshingly tangy lemon-flavored icing. Sweet and zesty!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Peanut Butter Sandwich -->
+                <div class="cookie-card" data-cookie="Peanut Butter Sandwich">
+                    <div class="cookie-card-inner">
+                        <div class="cookie-card-front">
+                            <img src="images/cookies/peanut-butter-sandwich.jpg" alt="Peanut Butter Sandwich" class="cookie-img">
+                            <div class="cookie-info">
+                                <h3 class="cookie-name">Peanut Butter Sandwich</h3>
+                                <p class="cookie-price">$6</p>
+                            </div>
+                        </div>
+                        <div class="cookie-card-back">
+                            <h3>Peanut Butter Sandwich</h3>
+                            <p class="cookie-description">Crisp and crunchy oatmeal cookies with peanut butter filling. Double the peanut butter goodness!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Adventurefuls -->
+                <div class="cookie-card" data-cookie="Adventurefuls">
+                    <div class="cookie-card-inner">
+                        <div class="cookie-card-front">
+                            <img src="images/cookies/adventurefuls.jpg" alt="Adventurefuls" class="cookie-img">
+                            <div class="cookie-info">
+                                <h3 class="cookie-name">Adventurefuls™</h3>
+                                <p class="cookie-price">$6</p>
+                            </div>
+                        </div>
+                        <div class="cookie-card-back">
+                            <h3>Adventurefuls™</h3>
+                            <p class="cookie-description">Indulgent brownie-inspired cookies with caramel flavored crème with a hint of sea salt. Adventure awaits!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exploremores -->
+                <div class="cookie-card" data-cookie="Exploremores">
+                    <div class="cookie-card-inner">
+                        <div class="cookie-card-front">
+                            <img src="images/cookies/exploremores.jpg" alt="Exploremores" class="cookie-img">
+                            <div class="cookie-info">
+                                <h3 class="cookie-name">Exploremores™</h3>
+                                <p class="cookie-price">$6</p>
+                            </div>
+                        </div>
+                        <div class="cookie-card-back">
+                            <h3>Exploremores™</h3>
+                            <p class="cookie-description">Rocky road-style cookies featuring chocolate, marshmallow, and toasted almond flavors. Explore every delicious bite!</p>
+                            <div class="cookie-badge">New!</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form -->
+    <section id="order" class="order">
+        <div class="container">
+            <div class="order-header">
+                <h2 class="section-title center">Ready to Pre-Order? 🍪</h2>
+                <p class="section-subtitle">Pre-orders for Twin Cities local delivery only!</p>
+                <div class="pre-order-notice">
+                    <strong>📍 Local Delivery:</strong> Twin Cities Metro Area Only<br>
+                    <strong>📅 Delivery Starts:</strong> Week of Feb 20, 2026<br>
+                    <strong>💰 Payment:</strong> Due upon delivery (Venmo, Zelle, Cash, or Check)<br>
+                    <strong>📮 Need Shipping?</strong> Online ordering opens Feb 11th!
+                </div>
+            </div>
+
+            <form id="orderForm" class="order-form" name="cookie-orders" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <!-- Hidden fields for Netlify -->
+                <input type="hidden" name="form-name" value="cookie-orders">
+                <p style="display:none;">
+                    <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                </p>
+                <input type="hidden" name="order-summary" id="order-summary">
+
+                <!-- Delivery Method -->
+                <div class="form-section">
+                    <h3 class="form-section-title">Delivery Method</h3>
+                    <div class="delivery-info-box">
+                        <div class="delivery-icon">📦</div>
+                        <div class="delivery-text">
+                            <strong>Local Delivery Only - Twin Cities Area</strong>
+                            <p>Pre-orders are for local delivery in the Twin Cities metro area only.</p>
+                            <p class="shipping-note">📮 <strong>Need shipping?</strong> Online ordering with shipping options opens February 11th!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="form-section">
+                    <h3 class="form-section-title">Your Information</h3>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Your name">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="(555) 555-5555">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Street Address *</label>
+                        <input type="text" id="address" name="address" required placeholder="123 Main Street">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">City *</label>
+                            <input type="text" id="city" name="city" required placeholder="Minneapolis, St. Paul, etc.">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="zip">Zip Code *</label>
+                            <input type="text" id="zip" name="zip" required placeholder="12345">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cookie Selection -->
+                <div class="form-section">
+                    <h3 class="form-section-title">Select Your Cookies</h3>
+
+                    <div class="cookie-selector">
+                        <!-- Thin Mints -->
+                        <div class="selector-row">
+                            <span class="selector-name">Thin Mints®</span>
+                            <div class="quantity-control">
+                                <button type="button" class="qty-btn" data-action="decrease" data-cookie="thin-mints">−</button>
+                                <input type="number" class="qty-input" id="qty-thin-mints" name="qty-thin-mints" value="0" min="0" readonly>
+                                <button type="button" class="qty-btn" data-action="increase" data-cookie="thin-mints">+</button>
+                            </div>
+                            <span class="selector-price" id="price-thin-mints">$0</span>
+                        </div>
+
+                        <!-- Caramel deLites -->
+                        <div class="selector-row">
+                            <span class="selector-name">Caramel deLites®</span>
+                            <div class="quantity-control">
+                                <button type="button" class="qty-btn" data-action="decrease" data-cookie="caramel-delites">−</button>
+                                <input type="number" class="qty-input" id="qty-caramel-delites" name="qty-caramel-delites" value="0" min="0" readonly>
+                                <button type="button" class="qty-btn" data-action="increase" data-cookie="caramel-delites">+</button>
+                            </div>
+                            <span class="selector-price" id="price-caramel-delites">$0</span>
+                        </div>
+
+                        <!-- Peanut Butter Patties -->
+                        <div class="selector-row">
+                            <span class="selector-name">Peanut Butter Patties®</span>
+                            <div class="quantity-control">
+                                <button type="button" class="qty-btn" data-action="decrease" data-cookie="peanut-butter-patties">−</button>
+                                <input type="number" class="qty-input" id="qty-peanut-butter-patties" name="qty-peanut-butter-patties" value="0" min="0" readonly>
+                                <button type="button" class="qty-btn" data-action="increase" data-cookie="peanut-butter-patties">+</button>
+                            </div>
+                            <span class="selector-price" id="price-peanut-butter-patties">$0</span>
+                        </div>
+
+                        <!-- Trefoils -->
+                        <div class="selector-row">
+                            <span class="selector-name">Trefoils®</span>
+                            <div class="quantity-control">
+                                <button type="button" class="qty-btn" data-action="decrease" data-cookie="trefoils">−</button>
+                                <input type="number" class="qty-input" id="qty-trefoils" name="qty-trefoils" value="0" min="0" readonly>
+                                <button type="button" class="qty-btn" data-action="increase" data-cookie="trefoils">+</button>
+                            </div>
+                            <span class="selector-price" id="price-trefoils">$0</span>
+                        </div>
+
+                        <!-- Lemonades -->
+                        <div class="selector-row">
+                            <span class="selector-name">Lemonades®</span>
+                            <div class="quantity-control">
+                                <button type="button" class="qty-btn" data-action="decrease" data-cookie="lemonades">−</button>
+                                <input type="number" class="qty-input" id="qty-lemonades" name="qty-lemonades" value="0" min="0" readonly>
+                                <button type="button" class="qty-btn" data-action="increase" data-cookie="lemonades">+</button>
+                            </div>
+                            <span class="selector-price" id="price-lemonades">$0</span>
+                        </div>
+
+                        <!-- Peanut Butter Sandwich -->
+                        <div class="selector-row">
+                            <span class="selector-name">Peanut Butter Sandwich</span>
+                            <div class="quantity-control">
+                                <button type="button" class="qty-btn" data-action="decrease" data-cookie="peanut-butter-sandwich">−</button>
+                                <input type="number" class="qty-input" id="qty-peanut-butter-sandwich" name="qty-peanut-butter-sandwich" value="0" min="0" readonly>
+                                <button type="button" class="qty-btn" data-action="increase" data-cookie="peanut-butter-sandwich">+</button>
+                            </div>
+                            <span class="selector-price" id="price-peanut-butter-sandwich">$0</span>
+                        </div>
+
+                        <!-- Adventurefuls -->
+                        <div class="selector-row">
+                            <span class="selector-name">Adventurefuls™</span>
+                            <div class="quantity-control">
+                                <button type="button" class="qty-btn" data-action="decrease" data-cookie="adventurefuls">−</button>
+                                <input type="number" class="qty-input" id="qty-adventurefuls" name="qty-adventurefuls" value="0" min="0" readonly>
+                                <button type="button" class="qty-btn" data-action="increase" data-cookie="adventurefuls">+</button>
+                            </div>
+                            <span class="selector-price" id="price-adventurefuls">$0</span>
+                        </div>
+
+                        <!-- Exploremores -->
+                        <div class="selector-row">
+                            <span class="selector-name">Exploremores™</span>
+                            <div class="quantity-control">
+                                <button type="button" class="qty-btn" data-action="decrease" data-cookie="exploremores">−</button>
+                                <input type="number" class="qty-input" id="qty-exploremores" name="qty-exploremores" value="0" min="0" readonly>
+                                <button type="button" class="qty-btn" data-action="increase" data-cookie="exploremores">+</button>
+                            </div>
+                            <span class="selector-price" id="price-exploremores">$0</span>
+                        </div>
+                    </div>
+
+                    <div class="order-total">
+                        <span class="total-label">Total:</span>
+                        <span class="total-boxes" id="totalBoxes">0 boxes</span>
+                        <span class="total-amount" id="totalAmount">$0</span>
+                    </div>
+                </div>
+
+                <!-- Special Requests -->
+                <div class="form-section">
+                    <div class="form-group">
+                        <label for="requests">Special Requests (Optional)</label>
+                        <textarea id="requests" name="requests" rows="3" placeholder="Any delivery instructions or special requests?"></textarea>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-submit">
+                    <button type="submit" class="btn btn-primary btn-large" id="submitBtn">
+                        Place My Pre-Order
+                    </button>
+                </div>
+            </form>
+
+            <!-- Success Message (hidden by default) -->
+            <div id="successMessage" class="success-message" style="display: none;">
+                <div class="success-icon">🎉</div>
+                <h3>Pre-Order Received!</h3>
+                <p class="success-text">Thank you <span id="successName"></span>!</p>
+                <p>You pre-ordered <span id="successBoxes"></span> boxes (<span id="successAmount"></span>)</p>
+                <p><strong>Delivery:</strong> Starting the week of Feb 20</p>
+                <p><strong>Payment:</strong> Due on delivery</p>
+                <p>Check your email and text for confirmation!</p>
+                <button type="button" class="btn btn-secondary" onclick="location.reload()">Place Another Pre-Order</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title center">Frequently Asked Questions</h2>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What does pre-ordering mean?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Pre-ordering means you're reserving your cookies now! You don't pay anything today. I'll deliver your cookies starting the week of Feb 20, and payment is due when you receive them. This helps me know how many boxes to order!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>When will I receive my cookies?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p><strong>All pre-orders will be delivered starting the week of Feb 20, 2026.</strong> I'll text and email you a few days before to confirm your delivery details!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I order multiple varieties?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! Mix and match any varieties you like. Most customers order 5-10 boxes of different types.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How do I pay?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p><strong>No payment needed now!</strong> Payment is due when you receive your cookies starting the week of Feb 20. I accept Venmo, Zelle, cash, or check. I'll send payment details in your confirmation email.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do you deliver outside the Twin Cities?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>These pre-orders are for <strong>local delivery in the Twin Cities metro area only</strong>. If you need shipping, online ordering with nationwide shipping will open on <strong>February 11th</strong>!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I donate cookies or ship to someone?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! Shipping and donation options will be available when online ordering opens on <strong>February 11th</strong>. These pre-orders are for local Twin Cities delivery only.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Are there allergen-friendly options?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Some varieties are gluten-free friendly. Please check the official Girl Scout cookie website for detailed allergen information.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <img src="images/profile.jpg" alt="Alice" class="footer-img">
+                    <h3 class="footer-title">Thank you for supporting my Girl Scout journey! 💚</h3>
+                    <p class="footer-text">Every box you buy helps me grow as a leader and makes amazing experiences possible.</p>
+
+                    <div class="footer-cta">
+                        <a href="#order" class="btn btn-primary">Pre-Order Cookies</a>
+                        <button class="btn btn-secondary" id="shareBtn">Share This Site</button>
+                    </div>
+                </div>
+
+                <div class="footer-info">
+                    <h4>Contact</h4>
+                    <p>Questions? Email us!</p>
+                    <p><a href="mailto:alicescookies@example.com">alicescookies@example.com</a></p>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Alice's Cookie Sales</p>
+                    <p>Proud member of Girl Scouts of USA</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/form.js"></script>
+</body>
+</html>
