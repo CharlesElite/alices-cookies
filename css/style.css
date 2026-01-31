@@ -426,13 +426,16 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
     background: linear-gradient(135deg, var(--color-purple), var(--color-pink));
     box-shadow: var(--shadow-lg);
+    aspect-ratio: 1 / 1;
 }
 
 .meet-me-video {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
     border-radius: var(--radius-lg);
+    object-fit: cover;
+    object-position: center;
 }
 
 .video-placeholder {
@@ -461,6 +464,60 @@ h1, h2, h3, h4, h5, h6 {
 .video-placeholder small {
     font-size: 14px;
     opacity: 0.8;
+}
+
+/* Video Overlay (before play) */
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 177, 64, 0.95), rgba(157, 78, 221, 0.95));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+.video-overlay:hover {
+    background: linear-gradient(135deg, rgba(0, 177, 64, 1), rgba(157, 78, 221, 1));
+}
+
+.video-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.video-overlay-content {
+    text-align: center;
+    color: white;
+    padding: var(--spacing-lg);
+}
+
+.video-overlay .play-icon {
+    font-size: 64px;
+    margin-bottom: var(--spacing-md);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.video-overlay h3 {
+    font-size: 28px;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 700;
+}
+
+.video-overlay p {
+    font-size: 16px;
+    line-height: 1.6;
+    opacity: 0.95;
 }
 
 .video-placeholder code {

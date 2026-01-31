@@ -8,6 +8,7 @@
 // =================================
 const CONFIG = {
     COOKIE_PRICE: 6,
+    GOOGLE_SHEETS_URL: 'https://script.google.com/macros/s/AKfycbyM5GpECaMELOMkziz84cWcghVWdM_ci0F4n7Xf8uhotjAtCl7POJ1k7dv3AvV18dFAHA/exec',
     cookies: [
         'thin-mints',
         'caramel-delites',
@@ -16,7 +17,8 @@ const CONFIG = {
         'lemonades',
         'peanut-butter-sandwich',
         'adventurefuls',
-        'exploremores'
+        'exploremores',
+        'caramel-choc-chip'
     ]
 };
 
@@ -274,26 +276,33 @@ function showFormError(message) {
 function initFormSubmission() {
     const form = document.getElementById('orderForm');
 
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
         // Validate form first
         if (!validateForm()) {
-            e.preventDefault();
             return false;
         }
 
         // Prepare order data
         const orderData = collectFormData();
 
-        // Create order summary for Netlify
-        const orderSummary = formatOrderSummary(orderData);
-        document.getElementById('order-summary').value = orderSummary;
-
         // Show loading state
         showLoading();
 
-        // Let the form submit naturally to Netlify
-        // Netlify will handle the redirect to success.html
-        return true;
+        try {
+            // Submit to Google Sheets
+            await submitToGoogleSheets(orderData);
+
+            // Show success message
+            showSuccess(orderData);
+
+        } catch (error) {
+            console.error('Order submission error:', error);
+            showError();
+        } finally {
+            hideLoading();
+        }
     });
 }
 
@@ -342,37 +351,43 @@ function getCookieDisplayName(cookieId) {
         'lemonades': 'Lemonades®',
         'peanut-butter-sandwich': 'Peanut Butter Sandwich',
         'adventurefuls': 'Adventurefuls™',
-        'exploremores': 'Exploremores™'
+        'exploremores': 'Exploremores™',
+        'caramel-choc-chip': 'Caramel Chocolate Chip'
     };
     return names[cookieId] || cookieId;
 }
 
-function formatOrderSummary(orderData) {
-    let summary = `ORDER DETAILS\n`;
-    summary += `=============\n\n`;
-    summary += `Customer: ${orderData.customer_name}\n`;
-    summary += `Email: ${orderData.customer_email}\n`;
-    summary += `Phone: ${orderData.customer_phone}\n\n`;
-    summary += `Delivery Address:\n`;
-    summary += `${orderData.address}\n`;
-    summary += `${orderData.city}, ${orderData.zip}\n\n`;
-    summary += `COOKIES ORDERED:\n`;
-    summary += `----------------\n`;
+async function submitToGoogleSheets(orderData) {
+    // Format cookies list for spreadsheet
+    const cookiesList = orderData.cookies
+        .map(c => `${c.quantity}x ${c.name} ($${c.price})`)
+        .join(', ');
 
-    orderData.cookies.forEach(cookie => {
-        summary += `${cookie.quantity}x ${cookie.name} - $${cookie.price}\n`;
+    const formattedData = {
+        name: orderData.customer_name,
+        email: orderData.customer_email,
+        phone: orderData.customer_phone,
+        address: orderData.address,
+        city: orderData.city,
+        zip: orderData.zip,
+        cookies: cookiesList,
+        totalBoxes: orderData.total_boxes,
+        totalAmount: orderData.total_amount,
+        requests: orderData.special_requests || ''
+    };
+
+    const response = await fetch(CONFIG.GOOGLE_SHEETS_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formattedData)
     });
 
-    summary += `\n`;
-    summary += `TOTAL: ${orderData.total_boxes} boxes - $${orderData.total_amount}\n`;
-
-    if (orderData.special_requests) {
-        summary += `\nSpecial Requests: ${orderData.special_requests}\n`;
-    }
-
-    summary += `\nOrder Date: ${new Date(orderData.timestamp).toLocaleString()}\n`;
-
-    return summary;
+    // Note: no-cors mode means we can't read the response
+    // but the request will still go through
+    return true;
 }
 
 // =================================
@@ -421,7 +436,7 @@ function showSuccess(orderData) {
 }
 
 function showError() {
-    showFormError('Oops! Something went wrong. Please try again or email us at alicescookies@example.com');
+    showFormError('Oops! Something went wrong. Please try again or email us at alicescookieland@gmail.com');
 }
 
 // =================================
